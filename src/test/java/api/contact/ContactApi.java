@@ -29,7 +29,7 @@ public class ContactApi extends ApiBase {
         return dto;
     }
 
-    public Response createContact(Integer code) {
+    public Response createNewContact(Integer code) {
         String endpoint = "/api/contact";
         response = postRequest(endpoint, code, randomDataBodyForCreateContact());
         return response;
@@ -48,7 +48,7 @@ public class ContactApi extends ApiBase {
 
     public Response getContact(Integer code, int contactId) {
         String endpoint = "/api/contact/{id}";
-        response = getRequestWithParams(endpoint, code, contactId);
+        response = getRequestWithParam(endpoint, code, "id", contactId);
         return response;
     }
 }
